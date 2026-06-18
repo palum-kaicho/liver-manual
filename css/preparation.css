@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   ① 既存のサイドバー・メインの余白をリセットしてコンパクト化
+   ========================================================================== */
+.sidebar {
+    display: none !important; /* 既存のサイドバーを完全に消去 */
+}
+
+.main {
+    margin-left: 0 !important; /* 左の余白を無くして画面いっぱいに */
+}
+
+/* 新しいメインエリアのコンテナ設定 */
+.main-compact {
+    margin-top: 80px; /* 固定ヘッダーの高さ分の余白をあける */
+    width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+/* ==========================================================================
+   ② コンパクト上部固定ヘッダーのデザイン
+   ========================================================================== */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* ロゴのサイズ調整 */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    height: 55px; /* ヘッダーに綺麗に収まる高さに自動縮小 */
+    width: auto;
+}
+
+.header-ver {
+    font-size: 12px;
+    font-weight: bold;
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+/* ==========================================================================
+   ③ CSSハンバーガーメニューの仕掛け（3本線アニメーション）
+   ========================================================================== */
+/* チェックボックス本体は隠す */
+#menu-btn-check {
+    display: none;
+}
+
+/* 三本線ボタンのエリア */
+.menu-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 1100;
+    border-radius: 8px;
+    background-color: #fff6f7;
+}
+
+/* 三本線の真ん中の線 */
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent); /* 弊社の赤色 */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 上下の線の一 */
+.menu-btn span::before { top: -8px; }
+.menu-btn span::after { top: 8px; }
+
+/* ボタンがクリック（チェック）されたら三本線を「×」に変形 */
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: transparent; /* 真ん中の線を消す */
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ==========================================================================
+   ④ ドロワーメニュー（右からスライドして出てくるメニュー画面）
+   ========================================================================== */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* 最初は画面の右外に隠しておく */
+    width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.08);
+    border-left: 1px solid var(--border);
+    transition: all 0.3s ease;
+    z-index: 1050;
+    padding: 100px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.nav-menu-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--sub);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 5px;
+}
+
+/* メニュー内のリンク装飾 */
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    background: #fafafa;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+}
+
+.nav-menu a:hover {
+    background: #fff2f4;
+    color: var(--accent);
+    transform: translateX(-3px);
+}
+
+/* アクティブなページの目立たせ（赤背景） */
+.nav-menu a.active {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.2);
+}
+
+/* チェックが入ったらメニューを画面内にスライドインさせる */
+#menu-btn-check:checked ~ .nav-menu {
+    right: 0;
+}
+
+/* ==========================================================================
+   ⑤ イラストマニュアル本体のギャラリー設定
+   ========================================================================== */
+.manual-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.manual-image-wrapper {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    line-height: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manual-image-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.manual-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* タブレット・スマホ用の微調整 */
+@media (max-width: 900px) {
+    .top-header {
+        padding: 0 15px;
+        height: 70px;
+    }
+    .header-logo img {
+        height: 45px;
+    }
+    .main-compact {
+        margin-top: 70px;
+    }
+    .manual-gallery {
+        gap: 15px;
+    }
+    .manual-image-wrapper {
+        border-radius: 12px;
+    }
+    .nav-menu {
+        width: 100%; /* スマホの時はメニューを全画面にする */
+        right: -100%;
+    }
+    #menu-btn-check:checked ~ .nav-menu {
+        right: 0;
+    }
+}
