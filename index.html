@@ -1,296 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gemaris 所属ライバー向け 配信運営マニュアル Ver6</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemaris 所属ライバー向け 配信運営マニュアル Ver2.0</title>
+    
+    <!-- 1本目：共通デザイン -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 2本目：このページ専用（共通のコンパクトヘッダー＆レイアウト設定） -->
+    <link rel="stylesheet" href="css/preparation.css">
 </head>
-
 <body>
 
-<!-- サイドバー -->
+<!-- コンパクト上部ヘッダー（全ページ完全共通化！） -->
+<header class="top-header">
+    <div class="header-logo">
+        <img src="images/image(24).png" alt="Gemaris">
+        <span class="header-ver">Ver2.0</span>
+    </div>
 
-<aside class="sidebar">
+    <!-- ハンバーガーメニューの仕掛け -->
+    <input type="checkbox" id="menu-btn-check">
+    <label for="menu-btn-check" class="menu-btn"><span></span></label>
 
-<div class="logo">
-    GEMARIS
-</div>
+    <!-- 折りたたまれるメニュー中身 -->
+    <nav class="nav-menu">
+        <div class="nav-menu-inner">
+            <p class="menu-title">MENU</p>
+            <!-- TOPページがアクティブなので active クラスを付与 -->
+            <a href="index.html" class="active">🏠 TOP</a>
+            <a href="preparation.html">✨ ① 初配信前の準備</a>
+            <a href="listener-experience.html">💝 ② リスナー体験満足度</a>
+            <a href="qa.html">❓ ③ Q&A</a>
+        </div>
+    </nav>
+</header>
 
-<div class="logo-sub">
-    所属ライバー向け 配信運営マニュアル Ver6
-</div>
+<!-- メインコンテンツ（ヘッダー固定用の余白設定を適用） -->
+<main class="main-compact">
 
-<nav class="nav">
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div>
+            <span class="version">Ver2.0</span>
+            <h1>
+                所属ライバー向け<br>
+                配信運営マニュアル
+            </h1>
+            <p>応援される理由を作り続けるために</p>
 
-    <a href="index.html">
-        TOP
-    </a>
-
-    <a href="preparation.html">
-        ① 初配信前の準備
-    </a>
-
-    <a href="listener-experience.html">
-        ② リスナー体験満足度
-    </a>
-
-    <a href="qa.html">
-        ③ Q&A
-    </a>
-
-</nav>
-
-</aside>
-
-<!-- メイン -->
-
-<main class="main">
-
-<!-- ヒーロー -->
-
-<section class="hero">
-
-    <div>
-
-        <span class="version">
-            Ver6
-        </span>
-
-        <h1>
-            所属ライバー向け<br>
-            配信運営マニュアル
-        </h1>
-
-        <p>
-            応援される理由を作り続けるために
-        </p>
-
-        <div class="philosophy">
-
-            <div class="philosophy-card">
-
-                私たちはリスナーに価値を提供する
-                パフォーマー（演者）である
-
+            <div class="philosophy">
+                <div class="philosophy-card">
+                    私たちはリスナーに価値を提供する パフォーマー（演者）である
+                </div>
+                <div class="philosophy-card">
+                    ギフトは目的ではなく、 パフォーマンスによる価値提供の結果である
+                </div>
+                <div class="philosophy-card">
+                    応援される理由を作り続ける
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="philosophy-card">
+    <!-- 本文コンテンツエリア -->
+    <section class="container">
 
-                ギフトは目的ではなく、
-                パフォーマンスによる価値提供の結果である
-
-            </div>
-
-            <div class="philosophy-card">
-
-                応援される理由を作り続ける
-
-            </div>
-
+        <!-- 運営理念 -->
+        <div class="section">
+            <div class="section-number">PHILOSOPHY</div>
+            <h2 class="section-title">運営理念</h2>
+            <p class="section-description">
+                私たちは配信を単なる雑談や時間消費ではなく、リスナーへ価値を提供するエンターテインメントであると考えています。
+                <br><br>
+                ギフトは目的ではありません。
+                <br>
+                リスナーが「面白かった」「また来たい」「応援したい」と感じた結果として生まれるものです。
+                <br><br>
+                応援される理由を作り続けること。
+                <br>
+                それがライバー活動の本質です。
+            </p>
         </div>
 
-    </div>
+        <!-- 目次（カード全体をクリックできるようにリンク化したで！） -->
+        <div class="section">
+            <div class="section-number">CONTENTS</div>
+            <h2 class="section-title">目次</h2>
+            
+            <div class="card-grid">
+                <!-- ① 初配信前の準備へのリンク -->
+                <a href="preparation.html" class="card-link" style="text-decoration: none; color: inherit;">
+                    <div class="card">
+                        <h3>① 初配信前の準備</h3>
+                        <p>
+                            サムネイル、配信機材、OBS、外部コミュニティなど、配信前に整えておきたい環境構築について解説します。
+                        </p>
+                    </div>
+                </a>
 
-</section>
+                <!-- ② リスナー体験満足度へのリンク -->
+                <a href="listener-experience.html" class="card-link" style="text-decoration: none; color: inherit;">
+                    <div class="card">
+                        <h3>② リスナー体験満足度</h3>
+                        <p>
+                            世界観づくり、初見対応、会話の広げ方、距離感など、リスナーに選ばれる配信づくりを解説します。
+                        </p>
+                    </div>
+                </a>
 
-<!-- 本文 -->
-
-<section class="container">
-
-    <!-- 運営理念 -->
-
-    <div class="section">
-
-        <div class="section-number">
-            PHILOSOPHY
+                <!-- ③ Q&Aへのリンク -->
+                <a href="qa.html" class="card-link" style="text-decoration: none; color: inherit;">
+                    <div class="card">
+                        <h3>③ Q&A</h3>
+                        <p>
+                            個性、ギフト、フォロワー、同接、経費申請など、よくある質問をまとめています。
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
 
-        <h2 class="section-title">
-            運営理念
-        </h2>
-
-        <p class="section-description">
-
-            私たちは配信を単なる雑談や時間消費ではなく、
-            リスナーへ価値を提供するエンターテインメントであると考えています。
-
-            <br><br>
-
-            ギフトは目的ではありません。
-
-            <br>
-
-            リスナーが
-
-            「面白かった」
-            「また来たい」
-            「応援したい」
-
-            と感じた結果として生まれるものです。
-
-            <br><br>
-
-            応援される理由を作り続けること。
-
-            <br>
-
-            それがライバー活動の本質です。
-
-        </p>
-
-    </div>
-
-    <!-- 目次 -->
-
-    <div class="section">
-
-        <div class="section-number">
-            CONTENTS
+        <!-- メッセージ -->
+        <div class="card">
+            <h3>Gemarisからのメッセージ</h3>
+            <p>
+                配信活動に正解はありません。
+                <br><br>
+                しかし、リスナーに価値を届け続けるという本質は変わりません。
+                <br><br>
+                このマニュアルは皆さんの活動を縛るためではなく、より多くの人に応援されるためのヒント集として作成しています。
+                <br><br>
+                自分らしさを大切にしながら、一緒に成長していきましょう。
+            </p>
         </div>
 
-        <h2 class="section-title">
-            目次
-        </h2>
-
-        <div class="card-grid">
-
-            <div class="card">
-
-                <h3>
-                    ① 初配信前の準備
-                </h3>
-
-                <p>
-
-                    サムネイル、
-                    配信機材、
-                    OBS、
-                    外部コミュニティなど
-
-                    配信前に整えておきたい
-                    環境構築について解説します。
-
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    ② リスナー体験満足度
-                </h3>
-
-                <p>
-
-                    世界観づくり、
-                    初見対応、
-                    会話の広げ方、
-                    距離感など
-
-                    リスナーに選ばれる配信づくりを
-                    解説します。
-
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    ③ Q&A
-                </h3>
-
-                <p>
-
-                    個性、
-                    ギフト、
-                    フォロワー、
-                    同接、
-                    経費申請など
-
-                    よくある質問をまとめています。
-
-                </p>
-
-            </div>
-
+        <!-- ページ移動ボタン -->
+        <div class="button-group">
+            <span></span><!-- 左側の余白維持用 -->
+            <a href="preparation.html" class="btn">次へ →</a>
         </div>
 
-    </div>
+    </section>
 
-    <!-- メッセージ -->
-
-    <div class="card">
-
-        <h3>
-            Gemarisからのメッセージ
-        </h3>
-
-        <p>
-
-            配信活動に正解はありません。
-
-            <br><br>
-
-            しかし、
-
-            リスナーに価値を届け続ける
-
-            という本質は変わりません。
-
-            <br><br>
-
-            このマニュアルは
-            皆さんの活動を縛るためではなく、
-
-            より多くの人に応援されるための
-            ヒント集として作成しています。
-
-            <br><br>
-
-            自分らしさを大切にしながら、
-            一緒に成長していきましょう。
-
-        </p>
-
-    </div>
-
-    <div class="button-group">
-
-        <span></span>
-
-        <a
-            href="preparation.html"
-            class="btn">
-
-            次へ →
-
-        </a>
-
-    </div>
-
-</section>
-
-<footer class="footer">
-
-    Gemaris LIVER MANUAL Ver6
-
-    <br>
-
-    2026/06/04 17:00
-
-    <br>
-
-    ひな Ver6
-
-</footer>
-```
-
+    <!-- フッター -->
+    <footer class="footer">
+        Gemaris LIVER MANUAL Ver6<br>
+        2026/06/19 16:31<br>
+        ひな Ver9
+    </footer>
 </main>
 
 </body>
