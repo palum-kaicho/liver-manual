@@ -11,25 +11,29 @@
 </head>
 <body>
 
+<!-- コンパクト上部ヘッダー（全ページ完全共通化！） -->
 <header class="top-header">
     <div class="header-logo">
         <img src="images/image(24).png" alt="Gemaris">
-        <span class="header-ver">Ver2.0</span>
     </div>
 
+    <!-- ハンバーガーメニューの仕掛け -->
     <input type="checkbox" id="menu-btn-check">
     <label for="menu-btn-check" class="menu-btn"><span></span></label>
 
+    <!-- 折りたたまれるメニュー中身 -->
     <nav class="nav-menu">
         <div class="nav-menu-inner">
             <p class="menu-title">MENU</p>
-            <a href="index.html">🏠 TOP</a>
-            <a href="preparation.html">✨ ① 初配信前の準備</a>
-            <a href="listener-experience.html" class="active">💝 ② リスナー体験満足度</a>
-            <a href="qa.html">❓ ③ Q&A</a>
+            <!-- TOPページがアクティブなので active クラスを付与 -->
+            <a href="index.html" class="active">TOP</a>
+            <a href="preparation.html">① 初配信前の準備</a>
+            <a href="listener-experience.html">② リスナー体験満足度</a>
+            <a href="qa.html">③ Q&A</a>
         </div>
     </nav>
 </header>
+
 
 <main class="main-compact">
     <section class="container">
@@ -74,9 +78,7 @@
     </section>
 
     <footer class="footer">
-        Gemaris LIVER MANUAL Ver2.0<br>
-        2026/06/19 16:15<br>
-        ひな Ver8
+        Gemaris LIVER MANUAL <br>
     </footer>
 </main>
 
